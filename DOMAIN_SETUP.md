@@ -44,14 +44,22 @@ Once the DNS has propagated:
 3. Click **Verify DNS configuration**.
 4. Netlify will automatically provision a free Let's Encrypt SSL certificate for you, ensuring your site loads with the secure padlock (`https://`).
 
-## Step 5: Configure Email Notifications for the Contact Form
-Your website has a built-in contact form powered by Netlify Forms. To ensure you receive emails at `closurepointsolutions@gmail.com` when a user sends a message:
-1. In your Netlify Site Dashboard, go to **Site configuration**.
-2. Select **Forms** from the left sidebar.
-3. Scroll down to **Form notifications**.
-4. Click **Add notification** and choose **Email notification**.
-5. Set the "Event to listen for" to **New form submission**.
-6. Enter `closurepointsolutions@gmail.com` into the "Email to notify" field and click Save!
+## Step 5: Configure Email Notifications with Formspree
+Your website's contact form has been updated to use **Formspree** instead of Netlify Forms.
+Follow these steps to connect the form to your email (`closurepointsolutions@gmail.com`):
+
+1. **Create a Formspree Form:**
+   - Log in to your [Formspree](https://formspree.io/) dashboard.
+   - Click **+ New form** and name it "Closure Point Solutions Contact".
+   - Enter `closurepointsolutions@gmail.com` as the "Send emails to" address.
+   - Once created, Formspree will give you an endpoint URL that looks like this: `https://formspree.io/f/xyzpqrst`
+   - Copy the unique ID at the end of the URL (e.g., `xyzpqrst`).
+
+2. **Update the Website Code:**
+   - Open your project code and navigate to `src/components/Footer.jsx`.
+   - Locate line **16**, which looks like this: `const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {`
+   - Replace the `YOUR_FORMSPREE_ID` placeholder with your actual Formspree ID.
+   - Save the file and push the changes (or deploy via Netlify) for the form to instantly start sending emails to you!
 
 ---
 

@@ -5,19 +5,29 @@ import './Footer.css';
 const Footer = () => {
     const [status, setStatus] = useState(''); // 'submitting', 'success', 'error'
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('submitting');
         const form = e.target;
         const formData = new FormData(form);
 
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-            .then(() => setStatus('success'))
-            .catch((error) => setStatus('error'));
+        try {
+            const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+                method: "POST",
+                headers: { "Accept": "application/json" },
+                body: formData
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+                setTimeout(() => setStatus(''), 8000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
     };
 
     return (
@@ -64,51 +74,46 @@ const Footer = () => {
                     </div>
 
                     <div className="contact-form-container" data-aos="fade-left">
-                        {status === 'success' ? (
-                            <div className="contact-form" style={{ textAlign: 'center', padding: '3rem 2rem' }}>
-                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-                                    <CheckCircle size={48} color="var(--accent)" />
-                                </div>
-                                <h3>Message Sent!</h3>
-                                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Thank you for reaching out. We will get back to you shortly at closurepointsolutions@gmail.com.</p>
-                                <button onClick={() => setStatus('')} className="btn btn-outline" style={{ border: '1px solid var(--text-secondary)' }}>Send Another</button>
+                        <form className="contact-form" onSubmit={handleSubmit}>
+                            <h3>Send a Message</h3>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required />
                             </div>
-                        ) : (
-                            <form className="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-                                <input type="hidden" name="form-name" value="contact" />
-                                <h3>Send a Message</h3>
 
-                                <div className="form-group">
-                                    <label htmlFor="name">Full Name</label>
-                                    <input type="text" id="name" name="name" placeholder="John Doe" required />
+                            <div className="form-group">
+                                <label htmlFor="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="service">Service Needed</label>
+                                <select id="service" name="service" required>
+                                    <option value="vendor">Vendor Management</option>
+                                    <option value="recruitment">Recruitment</option>
+                                    <option value="manpower">Manpower Supply</option>
+                                    <option value="other">Other / General Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                            </div>
+
+                            <button type="submit" className="btn btn-primary btn-full submit-btn" disabled={status === 'submitting'}>
+                                {status === 'submitting' ? 'Sending...' : 'Send Message'} <Send size={18} />
+                            </button>
+
+                            {status === 'success' && (
+                                <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid #10b981', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#047857' }}>
+                                    <CheckCircle size={20} />
+                                    <span>Message successfully sent!</span>
                                 </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="email">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="john@example.com" required />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="service">Service Needed</label>
-                                    <select id="service" name="service" required>
-                                        <option value="vendor">Vendor Management</option>
-                                        <option value="recruitment">Recruitment</option>
-                                        <option value="manpower">Manpower Supply</option>
-                                        <option value="other">Other / General Inquiry</option>
-                                    </select>
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="message">Message</label>
-                                    <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
-                                </div>
-
-                                <button type="submit" className="btn btn-primary btn-full submit-btn" disabled={status === 'submitting'}>
-                                    {status === 'submitting' ? 'Sending...' : 'Send Message'} <Send size={18} />
-                                </button>
-                                {status === 'error' && <p style={{ color: 'red', marginTop: '1rem', fontSize: '0.9rem' }}>There was an error sending your message. Please try again.</p>}
-                            </form>
-                        )}
+                            )}
+                            {status === 'error' && <p style={{ color: 'red', marginTop: '1rem', fontSize: '0.9rem' }}>There was an error sending your message. Please try again.</p>}
+                        </form>
                     </div>
                 </div>
 

@@ -147,3 +147,17 @@
         display: block;
     }
 }
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .header-content {
+        padding: 0 1rem;
+    }
+
+    .logo-image {
+        height: 36px;
+    }
+}
