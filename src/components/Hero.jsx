@@ -18,7 +18,7 @@ const Hero = () => {
                     </div>
                     <h1 className="hero-title animate-fade-in delay-100" data-aos="fade-up" data-aos-delay="200">
                         Empower Your Business With <br />
-                        <span className="gradient-text type-effect">Closure Point Solutions</span>
+                        <span style={{ color: 'black', fontWeight: 'bold' }}>Closure Point Solutions</span>
                     </h1>
                     <p className="hero-desc animate-fade-in delay-200" data-aos="fade-up" data-aos-delay="300">
                         Comprehensive services in Vendor Management, Expert Recruitment, and Reliable Manpower Supply. Partner with us to streamline your operations and scale efficiently.

@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container header-content">
         <a href="#home" className="logo">
           <img src="/logo.png" alt="Closure Point Solutions" className="logo-image" />
-          <span className="logo-text">Closure Point <span className="gradient-text">Solutions</span></span>
+          <span className="logo-text" style={{ color: 'black', fontWeight: 'bold' }}>Closure Point Solutions</span>
         </a>
 
         {/* Desktop Nav */}
