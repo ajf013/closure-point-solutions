@@ -17,7 +17,8 @@ const Hero = () => {
                         <span className="badge-dot"></span> Next-Gen Business Solutions
                     </div>
                     <h3 className="hero-title animate-fade-in delay-100" data-aos="fade-up" data-aos-delay="200">
-                        Empower Your Business With <span style={{ color: 'black' }}>Closure Point Solutions</span>
+                        Empower Your Business With <br />
+                        <span style={{ color: 'black', fontWeight: 'bold' }}>Closure Point Solutions</span>
                     </h3>
                     <p className="hero-desc animate-fade-in delay-200" data-aos="fade-up" data-aos-delay="300">
                         Comprehensive services in Vendor Management, Expert Recruitment, and Reliable Manpower Supply. Partner with us to streamline your operations and scale efficiently.
