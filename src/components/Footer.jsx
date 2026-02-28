@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="container">
                 <div className="contact-wrapper glass-panel">
                     <div className="contact-info" data-aos="fade-right">
-                        <h2 className="contact-title">Ready to Transform Your <span className="gradient-text">Workforce?</span></h2>
+                        <h3 className="contact-title">Ready to Transform Your <span className="gradient-text">Workforce?</span></h3>
                         <p className="contact-desc">
                             Get in touch with Closure Point Solutions today. Our team of experts is ready to help you with vendor management, recruitment, and manpower needs.
                         </p>
