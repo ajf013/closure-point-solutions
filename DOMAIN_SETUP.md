@@ -44,6 +44,15 @@ Once the DNS has propagated:
 3. Click **Verify DNS configuration**.
 4. Netlify will automatically provision a free Let's Encrypt SSL certificate for you, ensuring your site loads with the secure padlock (`https://`).
 
+## Step 5: Configure Email Notifications for the Contact Form
+Your website has a built-in contact form powered by Netlify Forms. To ensure you receive emails at `closurepointsolutions@gmail.com` when a user sends a message:
+1. In your Netlify Site Dashboard, go to **Site configuration**.
+2. Select **Forms** from the left sidebar.
+3. Scroll down to **Form notifications**.
+4. Click **Add notification** and choose **Email notification**.
+5. Set the "Event to listen for" to **New form submission**.
+6. Enter `closurepointsolutions@gmail.com` into the "Email to notify" field and click Save!
+
 ---
 
 *Note: As an alternative to Step 2, Netlify also provides "Netlify DNS" where you change the **Nameservers** in Hostinger to point to Netlify (`dns1.p01.nsone.net`, etc.). Using A/CNAME records (described above) is generally safer if you also use Hostinger for Email hosting.*

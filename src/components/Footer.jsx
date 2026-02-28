@@ -1,8 +1,25 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
+    const [status, setStatus] = useState(''); // 'submitting', 'success', 'error'
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setStatus('submitting');
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+            .then(() => setStatus('success'))
+            .catch((error) => setStatus('error'));
+    };
+
     return (
         <footer id="contact" className="footer section">
             <div className="container">
@@ -47,38 +64,51 @@ const Footer = () => {
                     </div>
 
                     <div className="contact-form-container" data-aos="fade-left">
-                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                            <h3>Send a Message</h3>
-
-                            <div className="form-group">
-                                <label htmlFor="name">Full Name</label>
-                                <input type="text" id="name" placeholder="John Doe" />
+                        {status === 'success' ? (
+                            <div className="contact-form" style={{ textAlign: 'center', padding: '3rem 2rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                                    <CheckCircle size={48} color="var(--accent)" />
+                                </div>
+                                <h3>Message Sent!</h3>
+                                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Thank you for reaching out. We will get back to you shortly at closurepointsolutions@gmail.com.</p>
+                                <button onClick={() => setStatus('')} className="btn btn-outline" style={{ border: '1px solid var(--text-secondary)' }}>Send Another</button>
                             </div>
+                        ) : (
+                            <form className="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                                <input type="hidden" name="form-name" value="contact" />
+                                <h3>Send a Message</h3>
 
-                            <div className="form-group">
-                                <label htmlFor="email">Email Address</label>
-                                <input type="email" id="email" placeholder="john@example.com" />
-                            </div>
+                                <div className="form-group">
+                                    <label htmlFor="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required />
+                                </div>
 
-                            <div className="form-group">
-                                <label htmlFor="service">Service Needed</label>
-                                <select id="service">
-                                    <option value="vendor">Vendor Management</option>
-                                    <option value="recruitment">Recruitment</option>
-                                    <option value="manpower">Manpower Supply</option>
-                                    <option value="other">Other / General Inquiry</option>
-                                </select>
-                            </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                                </div>
 
-                            <div className="form-group">
-                                <label htmlFor="message">Message</label>
-                                <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
-                            </div>
+                                <div className="form-group">
+                                    <label htmlFor="service">Service Needed</label>
+                                    <select id="service" name="service" required>
+                                        <option value="vendor">Vendor Management</option>
+                                        <option value="recruitment">Recruitment</option>
+                                        <option value="manpower">Manpower Supply</option>
+                                        <option value="other">Other / General Inquiry</option>
+                                    </select>
+                                </div>
 
-                            <button type="submit" className="btn btn-primary btn-full submit-btn">
-                                Send Message <Send size={18} />
-                            </button>
-                        </form>
+                                <div className="form-group">
+                                    <label htmlFor="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                                </div>
+
+                                <button type="submit" className="btn btn-primary btn-full submit-btn" disabled={status === 'submitting'}>
+                                    {status === 'submitting' ? 'Sending...' : 'Send Message'} <Send size={18} />
+                                </button>
+                                {status === 'error' && <p style={{ color: 'red', marginTop: '1rem', fontSize: '0.9rem' }}>There was an error sending your message. Please try again.</p>}
+                            </form>
+                        )}
                     </div>
                 </div>
 
