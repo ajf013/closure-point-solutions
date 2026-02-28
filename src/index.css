@@ -13,7 +13,7 @@
   --bg-card-hover: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.1);
   --glow: 0 0 20px rgba(120, 163, 77, 0.4);
-  --section-padding: 6rem 2rem;
+  --section-padding: 6rem 0;
 
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
@@ -62,6 +62,7 @@ ul {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
+  padding: 0 1.5rem;
 }
 
 .gradient-text {
@@ -204,17 +205,17 @@ ul {
 /* Mobile Responsiveness Polish */
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 1.5rem;
+    padding: 3rem 0;
   }
 }
 
 @media (max-width: 480px) {
   .section {
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 0;
   }
 
   .container {
-    padding: 0;
+    padding: 0 1rem;
   }
 
   h1,

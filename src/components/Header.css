@@ -22,7 +22,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
 }
 
 .logo {
@@ -151,10 +150,6 @@
 @media (max-width: 480px) {
     .logo-text {
         font-size: 1.1rem;
-    }
-
-    .header-content {
-        padding: 0 1rem;
     }
 
     .logo-image {
