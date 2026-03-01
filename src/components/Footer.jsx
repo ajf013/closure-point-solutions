@@ -47,7 +47,7 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <h4>Email Us</h4>
-                                    <p>closurepointsolutions@gmail.com</p>
+                                    <p><a href="mailto:closurepointsolutions@gmail.com" className="contact-link">closurepointsolutions@gmail.com</a></p>
                                 </div>
                             </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <h4>Call Us</h4>
-                                    <p>+91 91138 11578</p>
+                                    <p><a href="tel:+919113811578" className="contact-link">+91 91138 11578</a></p>
                                 </div>
                             </div>
 
