@@ -18,11 +18,11 @@ const Hero = () => {
                         <span className="badge-dot"></span> Next-Gen Business Solutions
                     </div>
                     <h3 className="hero-title animate-fade-in delay-100">
-                        <span style={{ display: 'inline-block' }} data-aos="fade-right" data-aos-delay="200">
+                        <span style={{ display: 'inline-block' }} data-aos="fade-right" data-aos-delay="200" data-aos-mirror="true" data-aos-once="false">
                             Empower Your Business
                         </span>{' '}
-                        <span style={{ display: 'inline-block' }} data-aos="zoom-in" data-aos-delay="400">With</span> <br />
-                        <span style={{ color: 'black', fontWeight: 'bold', display: 'inline-block' }} data-aos="fade-up" data-aos-delay="600">Closure Point Solutions</span>
+                        <span style={{ display: 'inline-block' }} data-aos="zoom-in" data-aos-delay="400" data-aos-mirror="true" data-aos-once="false">With</span> <br />
+                        <span style={{ color: 'black', fontWeight: 'bold', display: 'inline-block' }} data-aos="fade-up" data-aos-delay="600" data-aos-mirror="true" data-aos-once="false">Closure Point Solutions</span>
                     </h3>
                     <p className="hero-desc animate-fade-in delay-200" data-aos="fade-up" data-aos-delay="300">
                         Comprehensive services in Vendor Management, Expert Recruitment, and Reliable Manpower Supply. Partner with us to streamline your operations and scale efficiently.
