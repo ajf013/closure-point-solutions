@@ -1,7 +1,40 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['logo.png', 'robots.txt', 'sitemap.xml'],
+      manifest: {
+        name: 'Closure Point Solutions',
+        short_name: 'ClosurePoint',
+        description: 'Expert Vendor Management, Recruitment, and Manpower Supply services to streamline operations and scale your business.',
+        theme_color: '#dcedc8',
+        background_color: '#ffffff',
+        display: 'standalone',
+        icons: [
+          {
+            src: '/logo.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/logo.png',
+            sizes: '512x512',
+            type: 'image/png'
+          },
+          {
+            src: '/logo.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable'
+          }
+        ]
+      }
+    })
+  ],
 })
