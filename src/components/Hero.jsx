@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 import { ArrowRight, Activity, Users, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
+    const titleRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // When the hero section leaves the viewport (scrolling down)
+                    if (!entry.isIntersecting) {
+                        // Find all AOS animated spans within the title
+                        const animatedSpans = titleRef.current?.querySelectorAll('[data-aos]');
+                        animatedSpans?.forEach(span => {
+                            // Manually strip the class so AOS is forced to re-apply it next time we scroll up
+                            span.classList.remove('aos-animate');
+                        });
+                    }
+                });
+            },
+            { threshold: 0 } // Trigger as soon as 1 pixel is visible/hidden
+        );
+
+        if (titleRef.current) {
+            observer.observe(titleRef.current);
+        }
+
+        return () => {
+            if (titleRef.current) {
+                observer.unobserve(titleRef.current);
+            }
+        };
+    }, []);
+
     return (
         <section id="home" className="hero section">
             <div className="hero-bg-shapes">
@@ -17,7 +48,7 @@ const Hero = () => {
                     <div className="badge animate-fade-in" data-aos="fade-down" data-aos-delay="100">
                         <span className="badge-dot"></span> Next-Gen Business Solutions
                     </div>
-                    <h3 className="hero-title animate-fade-in delay-100">
+                    <h3 ref={titleRef} className="hero-title animate-fade-in delay-100">
                         <span style={{ display: 'inline-block' }} data-aos="fade-right" data-aos-delay="200" data-aos-mirror="true" data-aos-once="false">
                             Empower Your Business
                         </span>{' '}
