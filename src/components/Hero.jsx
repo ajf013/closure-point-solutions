@@ -20,8 +20,8 @@ const Hero = () => {
                         <span style={{ display: 'inline-block' }} data-aos="fade-right" data-aos-delay="200">
                             Empower Your Business
                         </span>{' '}
-                        <span style={{ display: 'inline-block' }} data-aos="zoom-in" data-aos-delay="1200">With</span> <br />
-                        <span style={{ color: 'black', fontWeight: 'bold', display: 'inline-block' }} data-aos="fade-up" data-aos-delay="1800">Closure Point Solutions</span>
+                        <span style={{ display: 'inline-block' }} data-aos="zoom-in" data-aos-delay="400">With</span> <br />
+                        <span style={{ color: 'black', fontWeight: 'bold', display: 'inline-block' }} data-aos="fade-up" data-aos-delay="600">Closure Point Solutions</span>
                     </h3>
                     <p className="hero-desc animate-fade-in delay-200" data-aos="fade-up" data-aos-delay="300">
                         Comprehensive services in Vendor Management, Expert Recruitment, and Reliable Manpower Supply. Partner with us to streamline your operations and scale efficiently.
