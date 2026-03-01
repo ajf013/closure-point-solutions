@@ -1,5 +1,4 @@
 import React from 'react';
-import Typewriter from 'typewriter-effect';
 import { ArrowRight, Activity, Users, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
@@ -19,15 +18,7 @@ const Hero = () => {
                     </div>
                     <h3 className="hero-title animate-fade-in delay-100">
                         <span style={{ display: 'inline-block' }} data-aos="fade-right" data-aos-delay="200">
-                            <Typewriter
-                                options={{
-                                    strings: ['Empower Your Business'],
-                                    autoStart: true,
-                                    loop: false,
-                                    delay: 70,
-                                    cursor: ''
-                                }}
-                            />
+                            Empower Your Business
                         </span>{' '}
                         <span style={{ display: 'inline-block' }} data-aos="zoom-in" data-aos-delay="1200">With</span> <br />
                         <span style={{ color: 'black', fontWeight: 'bold', display: 'inline-block' }} data-aos="fade-up" data-aos-delay="1800">Closure Point Solutions</span>
