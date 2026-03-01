@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 import { ArrowRight, Activity, Users, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
@@ -37,17 +38,23 @@ const Hero = () => {
 
                     <div className="hero-stats animate-fade-in delay-400" data-aos="fade-up" data-aos-delay="500">
                         <div className="stat-item">
-                            <div className="stat-value">500+</div>
+                            <div className="stat-value">
+                                <CountUp end={500} duration={2.5} enableScrollSpy scrollSpyOnce={false} />+
+                            </div>
                             <div className="stat-label">Vendors Managed</div>
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
-                            <div className="stat-value">10k+</div>
+                            <div className="stat-value">
+                                <CountUp end={10} duration={2.5} enableScrollSpy scrollSpyOnce={false} />k+
+                            </div>
                             <div className="stat-label">Talents Placed</div>
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
-                            <div className="stat-value">99%</div>
+                            <div className="stat-value">
+                                <CountUp end={99} duration={2.5} enableScrollSpy scrollSpyOnce={false} />%
+                            </div>
                             <div className="stat-label">Client Retention</div>
                         </div>
                     </div>
