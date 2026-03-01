@@ -29,9 +29,9 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background: linear-gradient(-45deg, #90EE90, #dcedc8, #6B8E23, #dcedc8);
-  background-size: 400% 400%;
-  animation: bgGradient 12s ease-in-out infinite;
+  background: linear-gradient(-45deg, #aed581, #dcedc8, #7cb342, #f1f8e9, #6B8E23);
+  background-size: 300% 300%;
+  animation: bgGradient 8s ease-in-out infinite;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
