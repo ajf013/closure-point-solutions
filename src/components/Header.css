@@ -94,6 +94,45 @@
     color: var(--text-primary);
     cursor: pointer;
     z-index: 1001;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    padding: 0;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.hamburger-line:nth-child(1) {
+    top: 5px;
+}
+
+.hamburger-line:nth-child(2) {
+    top: 11px;
+}
+
+.hamburger-line:nth-child(3) {
+    top: 17px;
+}
+
+.mobile-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
 }
 
 .mobile-menu {

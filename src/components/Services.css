@@ -51,14 +51,17 @@
     gap: 1.5rem;
     padding: 1.5rem;
     border-radius: 1rem;
-    background: transparent;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: all var(--transition-normal);
-    border: 1px solid transparent;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .feature-item:hover {
-    background: var(--bg-card);
-    border-color: var(--glass-border);
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 0, 0, 0.2);
     transform: translateX(10px);
 }
 

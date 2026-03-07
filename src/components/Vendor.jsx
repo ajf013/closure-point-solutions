@@ -126,15 +126,18 @@ const VendorSelection = () => {
 
                     <div className="service-content" data-aos="fade-left">
                         <div className="features-list">
-                            {features.map((feature, index) => (
-                                <div key={index} className="feature-item hover-up" data-aos="fade-up" data-aos-delay={index * 100}>
-                                    <div className="feature-icon">{feature.icon}</div>
-                                    <div>
-                                        <h3 className="feature-title">{feature.title}</h3>
-                                        <p className="feature-desc">{feature.desc}</p>
+                            {features.map((feature, index) => {
+                                const animations = ['fade-down', 'fade-right', 'fade-left', 'fade-up'];
+                                return (
+                                    <div key={index} className="feature-item hover-up" data-aos={animations[index % animations.length]} data-aos-delay={index * 100} data-aos-mirror="true" data-aos-once="false">
+                                        <div className="feature-icon">{feature.icon}</div>
+                                        <div>
+                                            <h3 className="feature-title" style={{ fontWeight: '700' }}>{feature.title}</h3>
+                                            <p className="feature-desc" style={{ fontWeight: '500', color: '#1a1a1a' }}>{feature.desc}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

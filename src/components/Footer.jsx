@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -124,8 +125,10 @@ const Footer = () => {
                     </div>
                     <p className="copyright">&copy; {new Date().getFullYear()} Closure Point Solutions. All rights reserved.</p>
                     <div className="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+                        <Link to="/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</Link>
+                        <Link to="/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</Link>
+                        <Link to="/disclaimer" target="_blank" rel="noopener noreferrer">Disclaimer</Link>
                     </div>
                 </div>
             </div>

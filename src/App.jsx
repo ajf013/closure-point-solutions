@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Vendor from './components/Vendor';
-import Recruitment from './components/Recruitment';
-import Manpower from './components/Manpower';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
+import Disclaimer from './pages/Disclaimer';
+import CookieConsent from './components/CookieConsent';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -20,16 +24,20 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Header />
-      <main>
-        <Hero />
-        <Vendor />
-        <Recruitment />
-        <Manpower />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+        </Routes>
+        <CookieConsent />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
