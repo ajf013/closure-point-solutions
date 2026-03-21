@@ -17,7 +17,7 @@ Welcome to the Closure Point Solutions website repository! This is a modern, ful
 *   **Recruitment & Manpower Services:** Categorized service offerings with staggered entry animations and clear calls-to-action.
 *   **Premium UI/UX:** 
     *   **Mobile-First Design:** Fully responsive with a custom animated hamburger-to-X navigation toggle.
-    *   **Glassmorphism UI:** Modern frosted glass panels, vibrant gradient backgrounds, and smooth transitions.
+    *   **Glassmorphism UI:** Modern frosted glass panels, vibrant gradient backgrounds (slow-cycling for better UX), and smooth transitions.
     *   **Live Chat:** Integrated **JivoChat** widget for real-time customer support.
     *   **Scroll Animations:** Powered by `aos` (Animate On Scroll) for a professional, fluid feel.
 
