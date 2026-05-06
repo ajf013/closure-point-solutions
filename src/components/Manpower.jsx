@@ -36,14 +36,16 @@ const Manpower = () => {
                     </p>
                 </div>
 
-                <div className="grid-4 manpower-grid">
-                    {categories.map((category, index) => (
-                        <div key={index} className="manpower-card glass-panel hover-up" data-aos="fade-up" data-aos-delay={index * 150}>
-                            <div className="card-icon">{category.icon}</div>
-                            <h3 className="card-title">{category.title}</h3>
-                            <p className="card-desc">{category.desc}</p>
-                        </div>
-                    ))}
+                <div className="marquee-container">
+                    <div className="marquee-content">
+                        {[...categories, ...categories].map((category, index) => (
+                            <div key={index} className="manpower-card glass-panel hover-up">
+                                <div className="card-icon">{category.icon}</div>
+                                <h3 className="card-title">{category.title}</h3>
+                                <p className="card-desc">{category.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="cta-banner glass-panel flex-between mt-4" data-aos="zoom-in" data-aos-delay="200">

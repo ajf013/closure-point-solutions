@@ -29,7 +29,7 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background: linear-gradient(-45deg, #f1f8e9, #aed581, #7cb342, #558b2f, #dcedc8, #6B8E23, #c5e1a5, #33691e);
+  background: linear-gradient(-45deg, #f1f8e9, #dcedc8, #c5e1a5, #aed581, #93c572, #8bc34a, #dcedc8, #f1f8e9);
   background-size: 400% 400%;
   animation: bgGradient 60s ease-in-out infinite;
   color: var(--text-primary);

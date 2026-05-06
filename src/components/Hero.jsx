@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 import { ArrowRight, Activity, Users, ShieldCheck } from 'lucide-react';
+import ParticleBackground from './ParticleBackground';
 import './Hero.css';
 
 const Hero = () => {
@@ -38,9 +39,7 @@ const Hero = () => {
     return (
         <section id="home" className="hero section">
             <div className="hero-bg-shapes">
-                <div className="shape shape-1"></div>
-                <div className="shape shape-2"></div>
-                <div className="shape shape-3"></div>
+                <ParticleBackground />
             </div>
 
             <div className="container hero-container">

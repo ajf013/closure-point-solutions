@@ -4,7 +4,7 @@ Welcome to the Closure Point Solutions website repository! This is a modern, ful
 
 ## 🚀 Features
 
-*   **Premium Hero Animation:** Cascading slide-up text entrance with a high-contrast shimmering gradient BRAND highlight ("Closure Point Solutions").
+*   **Premium Hero Animation:** Cascading slide-up text entrance with a high-contrast shimmering gradient BRAND highlight ("Closure Point Solutions"). Now includes an interactive 3D **Particle Cloud Network** background powered by React Three Fiber.
 *   **Legal Compliance Suite:** Independent, dedicated pages for **Disclaimer**, **Privacy Notice**, **Cookie Policy**, and **Terms of Service**, modeled after Quess Corp standards.
 *   **Cookie Consent system:** A global, persistent consent banner with `localStorage` memory to ensure privacy compliance.
 *   **Enterprise Routing:** Integrated `react-router-dom` to support independent legal pages while maintaining the smooth "One Page" feel of the main landing page.
@@ -14,10 +14,10 @@ Welcome to the Closure Point Solutions website repository! This is a modern, ful
     *   Integrated **Google Search Console** for search visibility.
     *   Optimized SEO meta tags and social media Open Graph cards.
 *   **Vendor Management Section:** Displays dynamic, animated statistics and mock UI for active vendors, compliance scores, and risk assessment.
-*   **Recruitment & Manpower Services:** Categorized service offerings with staggered entry animations and clear calls-to-action.
+*   **Recruitment & Manpower Services:** Categorized service offerings with staggered entry animations and an **auto-scrolling continuous marquee** for manpower categories.
 *   **Premium UI/UX:** 
     *   **Mobile-First Design:** Fully responsive with a custom animated hamburger-to-X navigation toggle.
-    *   **Glassmorphism UI:** Modern frosted glass panels, vibrant gradient backgrounds (slow-cycling for better UX), and smooth transitions.
+    *   **Glassmorphism UI:** Modern frosted glass panels, vibrant "Pista & Mid-Green" aesthetic backgrounds, and smooth transitions.
     *   **Live Chat:** Integrated **JivoChat** widget for real-time customer support.
     *   **Scroll Animations:** Powered by `aos` (Animate On Scroll) for a professional, fluid feel.
 
@@ -25,6 +25,7 @@ Welcome to the Closure Point Solutions website repository! This is a modern, ful
 
 *   **Framework:** React 19 + Vite
 *   **Routing:** React Router v7
+*   **3D Graphics:** Three.js, React Three Fiber, React Three Drei
 *   **Styling:** Custom CSS (Flexbox/Grid, CSS Variables, Glassmorphism)
 *   **Icons:** Lucide React
 *   **Tracking:** Google Tag Manager, Analytics, Search Console
