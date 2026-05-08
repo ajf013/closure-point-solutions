@@ -52,7 +52,7 @@ const Services = () => {
             <div 
               key={svc.idx} 
               className="service-card"
-              data-aos="fade-right"
+              data-aos={i < 2 ? "fade-right" : "fade-left"}
               data-aos-delay={i * 150}
             >
               <div className="svc-n">{svc.idx}</div>

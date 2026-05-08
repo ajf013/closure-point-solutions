@@ -25,7 +25,7 @@ const Impact = () => {
             <div 
               key={i} 
               className="impact-card" 
-              data-aos="fade-right" 
+              data-aos={i < 3 ? "fade-right" : "fade-left"} 
               data-aos-delay={i * 150}
             >
               <div className="impact-rule" style={{background: s.color}}></div>

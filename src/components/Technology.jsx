@@ -23,7 +23,12 @@ const Technology = () => {
 
         <div className="tech-grid">
           {techs.map((t, i) => (
-            <div key={i} className="tech-card" data-aos="fade-up" data-aos-delay={i * 50}>
+            <div 
+              key={i} 
+              className="tech-card" 
+              data-aos={i < 3 ? "fade-right" : "fade-left"} 
+              data-aos-delay={i * 150}
+            >
               <div className="tech-icon">{t.icon}</div>
               <h3 className="tech-ttl">{t.title}</h3>
               <p className="tech-desc">{t.desc}</p>

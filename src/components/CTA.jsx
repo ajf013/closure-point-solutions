@@ -7,9 +7,9 @@ const CTA = () => {
     <section id="cta" className="cta-section section">
       <div className="container">
         <div className="cta-inner" data-aos="fade-up">
-          <div className="cta-logo">
+          {/* <div className="cta-logo">
             <img src="/logo.png" alt="CPS Logo" />
-          </div>
+          </div> */}
           <div className="cta-tag">READY TO START?</div>
           <h2 className="cta-hl">Let’s <em>Scale</em> your <br />Business together.</h2>
           <p className="cta-sub">
