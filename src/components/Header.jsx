@@ -31,6 +31,7 @@ const Header = () => {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, null, href); // Update URL hash
         setIsMobileMenuOpen(false);
       }
     }
