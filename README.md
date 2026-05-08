@@ -1,94 +1,90 @@
 # Closure Point Solutions
 
-Welcome to the Closure Point Solutions website repository! This is a modern, fully responsive landing page built for a business specializing in Vendor Management, Expert Recruitment, and Reliable Manpower Supply.
+![License](https://img.shields.io/badge/license-MIT-green)
+![React](https://img.shields.io/badge/React-19-blue)
+![Vite](https://img.shields.io/badge/Vite-6-purple)
 
-## 🚀 Features
+**Closure Point Solutions (CPS)** is a premium, high-impact talent solutions platform specializing in Supply Chain, E-Commerce, and Real Estate sectors. Built with a modern tech stack, this website delivers a seamless, high-performance experience with a focus on deep niche expertise and professional aesthetics.
 
-*   **Premium Hero Animation:** Cascading slide-up text entrance with a high-contrast shimmering gradient BRAND highlight ("Closure Point Solutions"). Now includes an interactive 3D **Particle Cloud Network** background powered by React Three Fiber.
-*   **Legal Compliance Suite:** Independent, dedicated pages for **Disclaimer**, **Privacy Notice**, **Cookie Policy**, and **Terms of Service**, modeled after Quess Corp standards.
-*   **Cookie Consent system:** A global, persistent consent banner with `localStorage` memory to ensure privacy compliance.
-*   **Enterprise Routing:** Integrated `react-router-dom` to support independent legal pages while maintaining the smooth "One Page" feel of the main landing page.
-*   **SEO & Analytics:** 
-    *   Integrated **Google Tag Manager** (container system).
-    *   Integrated **Google Analytics (GA4)** for traffic tracking.
-    *   Integrated **Google Search Console** for search visibility.
-    *   Optimized SEO meta tags and social media Open Graph cards.
-*   **Vendor Management Section:** Displays dynamic, animated statistics and mock UI for active vendors, compliance scores, and risk assessment.
-*   **Recruitment & Manpower Services:** Categorized service offerings with staggered entry animations and an **auto-scrolling continuous marquee** for manpower categories.
-*   **Premium UI/UX:** 
-    *   **Mobile-First Design:** Fully responsive with a custom animated hamburger-to-X navigation toggle.
-    *   **Glassmorphism UI:** Modern frosted glass panels, vibrant "Pista & Mid-Green" aesthetic backgrounds, and smooth transitions.
-    *   **Live Chat:** Integrated **JivoChat** widget for real-time customer support.
-    *   **Scroll Animations:** Powered by `aos` (Animate On Scroll) for a professional, fluid feel.
+---
+
+## ✨ Key Features
+
+### 🏢 Niche Industry Focus
+*   **Dynamic Industries Section**: A specialized "Focus Mode" accordion that allows users to deep-dive into specific sectors (Supply Chain, E-Commerce, PropTech) while minimizing distractions.
+*   **Expertise-Driven Content**: Tailored roles and insights for high-growth industries.
+
+### 🎭 Premium UI/UX
+*   **High-Contrast Design**: A sophisticated "Pista Green" and "Dark Forest Green" palette for maximum readability and a premium feel.
+*   **Sequential Animations**: Staggered entrance animations (fade-right/fade-left) that create a professional "wave" effect on scroll.
+*   **Solid White Navigation**: A crisp, reliable navigation bar that remains highly visible across all sections and devices.
+*   **Custom Interactions**: Animated numbers, continuous marquees, and smooth scroll behaviors.
+
+### ⚙️ Technical Excellence
+*   **Mobile-First Responsiveness**: Optimized layouts for every screen size, from high-res monitors to mobile phones.
+*   **Advanced Cache Busting**: Custom version-tracking logic in `main.jsx` and `index.html` meta-tags to ensure users always see the latest version of the site without stale cache issues.
+*   **SEO & Tracking**: 
+    *   Fully integrated Google Tag Manager (GTM) and GA4.
+    *   Verified Search Console metadata.
+    *   Semantic HTML5 structure for optimal search engine indexing.
+
+---
 
 ## 🛠️ Tech Stack
 
-*   **Framework:** React 19 + Vite
-*   **Routing:** React Router v7
-*   **3D Graphics:** Three.js, React Three Fiber, React Three Drei
-*   **Styling:** Custom CSS (Flexbox/Grid, CSS Variables, Glassmorphism)
-*   **Icons:** Lucide React
-*   **Tracking:** Google Tag Manager, Analytics, Search Console
+*   **Core**: [React 19](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+*   **Icons**: [Lucide React](https://lucide.dev/)
+*   **Animations**: [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
+*   **Routing**: [React Router v7](https://reactrouter.com/)
+*   **Styling**: Vanilla CSS with modern Flexbox/Grid and CSS Variables.
+
+---
 
 ## 📂 Project Structure
 
 ```text
-closure-point-solutions/
-├── public/                 # Static assets (logos, icons)
-├── src/
-│   ├── components/         # Reusable UI components
-│   │   ├── CookieConsent/  # Global cookie banner & styles
-│   │   ├── Header/         # Animated navigation
-│   │   ├── Footer/         # Contact forms & legal links
-│   │   ├── Hero/           # Animated brand title & badge
-│   │   └── ...             # Sections (Vendor, Recruitment, etc.)
-│   ├── pages/              # Standalone page views
-│   │   ├── Home.jsx        # Main landing page wrapper
-│   │   ├── PrivacyPolicy.jsx
-│   │   ├── TermsOfService.jsx
-│   │   ├── CookiePolicy.jsx
-│   │   └── Disclaimer.jsx
-│   ├── App.jsx             # Main routing configuration
-│   ├── main.jsx            # Entry point
-│   └── index.css           # Global styles and background animations
-├── index.html              # HTML template with GTM & GSC integration
-└── package.json            # Project dependencies and scripts
+src/
+├── components/         # Reusable UI Components (Hero, Services, Industries, etc.)
+├── pages/              # Standalone views (Home, Privacy Policy, Terms)
+├── assets/             # Static images and logos
+├── main.jsx            # Application entry & Cache-busting logic
+├── App.jsx             # Root component & Routing
+└── index.css           # Global design system & theme variables
 ```
 
-## 📦 Getting Started
+---
 
-### Prerequisites
-Make sure you have Node.js installed on your machine.
+## 📦 Installation & Setup
 
-### Installation
-
-1. Clone the repository:
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/ajf013/closure-point-solutions.git
-   ```
-2. Navigate into the directory:
-   ```bash
    cd closure-point-solutions
    ```
-3. Install dependencies:
+
+2. **Install Dependencies**
    ```bash
    npm install
    ```
 
-### Running Locally
-To start the local development server, run:
-```bash
-npm run dev
-```
-Then, open your browser and access `http://localhost:5173`.
+3. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
 
-### Building for Production
-To create an optimized production build, run:
-```bash
-npm run build
-```
+4. **Production Build**
+   ```bash
+   npm run build
+   ```
 
-## 📬 Contact
+---
 
-*   **Email:** closurepointsolutions@gmail.com
-*   **Phone:** +91 91138 11578
+## 📬 Contact & Support
+
+*   **Website**: [closurepointsolutions.com](https://closurepointsolutions.com)
+*   **Email**: closurepointsolutions@gmail.com
+*   **Phone**: +91 91138 11578
+
+---
+
+© 2024 Closure Point Solutions. All rights reserved.
