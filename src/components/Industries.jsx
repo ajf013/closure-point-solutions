@@ -3,7 +3,7 @@ import { Plus } from 'lucide-react';
 import './Industries.css';
 
 const Industries = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const industries = [
     {
@@ -39,22 +39,18 @@ const Industries = () => {
           </p>
         </div>
 
-        <div className="industries-list">
+        <div className="industries-list" data-aos="fade-up">
           {industries.map((ind, i) => {
-            // If an item is open, and it's not THIS item, hide it.
-            const isHidden = openIndex !== -1 && openIndex !== i;
+            const isOpen = openIndex === i;
+            const isHidden = openIndex !== -1 && !isOpen;
             
             return (
               <div 
                 key={ind.idx} 
-                className={`industry-item ${openIndex === i ? 'open' : ''} ${isHidden ? 'focus-hidden' : ''}`}
-                data-aos="fade-right"
-                data-aos-delay={i * 200}
-                style={{
-                  display: isHidden ? 'none' : 'block'
-                }}
+                className={`industry-item ${isOpen ? 'open' : ''}`}
+                style={{ display: isHidden ? 'none' : 'block' }}
               >
-                <div className="industry-hdr" onClick={() => setOpenIndex(openIndex === i ? -1 : i)}>
+                <div className="industry-hdr" onClick={() => setOpenIndex(isOpen ? -1 : i)}>
                   <div className="ind-n">{ind.idx}</div>
                   <div className="ind-name">{ind.name}</div>
                   <div className="ind-arr">
