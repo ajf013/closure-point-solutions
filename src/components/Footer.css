@@ -1,165 +1,100 @@
 .footer {
-    padding-bottom: 2rem;
-    background: radial-gradient(circle at bottom center, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 5rem 0 2rem;
 }
 
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 4rem;
-    margin-bottom: 4rem;
+.ft-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
 }
 
-.contact-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+.ft-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.contact-desc {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
+.ft-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
 }
 
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.ft-logo span {
+  font-family: var(--ff-d);
+  font-weight: 900;
+  font-size: 1.2rem;
 }
 
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+.ft-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, .4);
+  line-height: 1.7;
+  max-width: 32ch;
 }
 
-.contact-icon {
-    background: rgba(37, 99, 235, 0.1);
-    color: var(--accent);
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    border: 1px solid rgba(37, 99, 235, 0.2);
+.ft-col h5 {
+  font-size: .66rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .3);
+  font-family: var(--ff-m);
+  margin-bottom: 1.4rem;
 }
 
-.contact-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-    color: var(--text-primary);
+.ft-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
 }
 
-.contact-item p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+.ft-col a {
+  font-size: .84rem;
+  color: rgba(255, 255, 255, .52);
+  transition: color 0.3s;
 }
 
-.contact-link {
-    transition: color var(--transition-fast);
+.ft-col a:hover {
+  color: #fff;
 }
 
-.contact-link:hover {
-    color: var(--primary);
-    text-decoration: underline;
+.ft-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.contact-form {
-    background: rgba(255, 255, 255, 0.4);
-    padding: 2.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+.ft-copy {
+  font-size: .75rem;
+  color: rgba(255, 255, 255, .28);
 }
 
-.contact-form h3 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+.ft-social {
+  display: flex;
+  gap: 1.5rem;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.ft-social a {
+  font-size: .75rem;
+  color: rgba(255, 255, 255, .4);
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-weight: 500;
+.ft-social a:hover {
+  color: #fff;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid var(--glass-border);
-    border-radius: 0.5rem;
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all var(--transition-fast);
+@media (max-width: 1100px) {
+  .ft-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-}
-
-.submit-btn {
-    margin-top: 1rem;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.copyright,
-.footer-links a {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-links a:hover {
-    color: white;
-}
-
-@media (max-width: 968px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 640px) {
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
+@media (max-width: 600px) {
+  .ft-top { grid-template-columns: 1fr; }
 }

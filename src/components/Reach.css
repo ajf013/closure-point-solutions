@@ -1,0 +1,83 @@
+.reach-section {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.reach-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.reach-content {
+  max-width: 500px;
+}
+
+.reach-sub {
+  font-size: 1.25rem; /* Increased from 1rem */
+  font-style: italic;
+  font-family: var(--ff-d);
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.reach-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2.2rem;
+}
+
+.r-stat .r-n {
+  font-family: var(--ff-d);
+  font-size: 3.2rem; /* Increased from 2.6rem */
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.r-stat .r-l {
+  font-size: .85rem; /* Increased */
+  color: var(--text-secondary);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+
+.reach-cards {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+.reach-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  padding: 1.8rem 2rem;
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+
+.reach-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.reach-card h4 {
+  font-size: 1.15rem; /* Increased from .92rem */
+  font-weight: 700;
+  font-family: var(--ff-d);
+  color: var(--text-primary);
+  margin-bottom: .4rem;
+}
+
+.reach-card p {
+  font-size: 1rem; /* Increased from .8rem */
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .reach-inner { grid-template-columns: 1fr; gap: 3rem; }
+}

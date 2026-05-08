@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -11,103 +10,83 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Vendor Management', href: '#vendor' },
-    { name: 'Recruitment', href: '#recruitment' },
-    { name: 'Manpower', href: '#manpower' },
+    { name: 'Services', href: '#services' },
+    { name: 'Industries', href: '#industries' },
+    { name: 'Process', href: '#process' },
+    { name: 'Technology', href: '#tech' },
+    { name: 'Why CPS', href: '#why' },
+    { name: 'Impact', href: '#impact' },
   ];
 
-  const renderLink = (link, className) => {
-    if (isHome) {
-      return <a href={link.href} className={className} onClick={() => setIsMobileMenuOpen(false)}>{link.name}</a>;
+  const handleLinkClick = (e, href) => {
+    if (isHome && href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
     }
-    return <Link to={`/${link.href}`} className={className} onClick={() => setIsMobileMenuOpen(false)}>{link.name}</Link>;
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container header-content">
-        {isHome ? (
-          <a href="#home" className="logo">
-            <img src="/logo.png" alt="Closure Point Solutions" className="logo-image" />
-            <span className="logo-text" style={{ color: 'black', fontWeight: 'bold' }}>Closure Point Solutions</span>
-          </a>
-        ) : (
-          <Link to="/" className="logo">
-            <img src="/logo.png" alt="Closure Point Solutions" className="logo-image" />
-            <span className="logo-text" style={{ color: 'black', fontWeight: 'bold' }}>Closure Point Solutions</span>
-          </Link>
-        )}
+    <nav className={`nav ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-inner">
+        <Link to="/" className="nav-logo" onClick={() => window.scrollTo(0, 0)}>
+          <img src="/logo.png" alt="CPS" />
+          <span className="logo-text">Closure Point Solutions</span>
+        </Link>
 
-        {/* Desktop Nav */}
-        <nav className="desktop-nav">
-          <ul className="nav-list">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                {renderLink(link, "nav-link")}
-              </li>
-            ))}
-          </ul>
-          {isHome ? (
-            <a href="#contact" className="btn btn-primary btn-sm">
-              Contact Us <ChevronRight size={16} />
+        <div className="nav-links">
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href} 
+              className="nav-link"
+              onClick={(e) => handleLinkClick(e, link.href)}
+            >
+              {link.name}
             </a>
-          ) : (
-            <Link to="/#contact" className="btn btn-primary btn-sm">
-              Contact Us <ChevronRight size={16} />
-            </Link>
-          )}
-        </nav>
+          ))}
+          <a href="#cta" className="nav-cta" onClick={(e) => handleLinkClick(e, '#cta')}>
+            Get in Touch
+          </a>
+        </div>
 
-        {/* Mobile Nav Toggle */}
-        <button
-          className={`mobile-toggle ${isMobileMenuOpen ? 'open' : ''}`}
+        <button 
+          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Menu"
         >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-        <nav className="mobile-nav">
-          <ul className="mobile-nav-list">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                {renderLink(link, "mobile-nav-link")}
-              </li>
-            ))}
-          </ul>
-          {isHome ? (
-            <a
-              href="#contact"
-              className="btn btn-primary btn-full"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact Us
-            </a>
-          ) : (
-            <Link
-              to="/#contact"
-              className="btn btn-primary btn-full"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact Us
-            </Link>
-          )}
-        </nav>
+        <button className="mobile-close" onClick={() => setIsMobileMenuOpen(false)}>&times;</button>
+        {navLinks.map((link) => (
+          <a 
+            key={link.name} 
+            href={link.href} 
+            className="mob-link"
+            onClick={(e) => handleLinkClick(e, link.href)}
+          >
+            {link.name}
+          </a>
+        ))}
+        <a href="#cta" className="mob-link cta" onClick={(e) => handleLinkClick(e, '#cta')}>
+          Get in Touch
+        </a>
       </div>
-    </header>
+    </nav>
   );
 };
 

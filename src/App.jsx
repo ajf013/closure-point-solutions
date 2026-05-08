@@ -6,8 +6,7 @@ import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
-import Disclaimer from './pages/Disclaimer';
-import CookieConsent from './components/CookieConsent';
+import CustomCursor from './components/CustomCursor';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -26,15 +25,14 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <CustomCursor />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
-        <CookieConsent />
         <Footer />
       </div>
     </Router>

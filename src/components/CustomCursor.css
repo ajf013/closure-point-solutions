@@ -1,0 +1,34 @@
+.cur {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s var(--ease), height 0.2s var(--ease);
+}
+
+.cur-r {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.45;
+  transition: width 0.35s var(--ease), height 0.35s var(--ease), left 0.1s ease-out, top 0.1s ease-out;
+}
+
+body:active .cur {
+  width: 12px;
+  height: 12px;
+}
+
+body:active .cur-r {
+  width: 44px;
+  height: 44px;
+}

@@ -1,0 +1,88 @@
+.why-section {
+  background: var(--primary);
+  color: #fff;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.why-top {
+  margin-bottom: 4.5rem;
+  text-align: left;
+}
+
+.why-stag {
+  font-family: var(--ff-m);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.stag-line {
+  display: inline-block;
+  width: 1.8rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.why-hl {
+  font-family: var(--ff-d);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.why-hl em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem 2.5rem;
+}
+
+.why-card {
+  position: relative;
+}
+
+.why-rule {
+  width: 1.5rem;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.why-card-ttl {
+  font-family: var(--ff-d);
+  font-size: 1.45rem; /* Increased from 1.25rem */
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  color: #fff;
+}
+
+.why-card-desc {
+  font-size: 1.1rem; /* Increased from 0.88rem */
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 1100px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .why-grid { gap: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
