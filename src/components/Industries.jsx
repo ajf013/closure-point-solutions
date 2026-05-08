@@ -40,35 +40,43 @@ const Industries = () => {
         </div>
 
         <div className="industries-list">
-          {industries.map((ind, i) => (
-            <div 
-              key={ind.idx} 
-              className={`industry-item ${openIndex === i ? 'open' : ''}`}
-              data-aos="fade-right"
-              data-aos-delay={i * 200}
-            >
-              <div className="industry-hdr" onClick={() => setOpenIndex(openIndex === i ? -1 : i)}>
-                <div className="ind-n">{ind.idx}</div>
-                <div className="ind-name">{ind.name}</div>
-                <div className="ind-arr">
-                  <Plus size={20} className="plus-icon" />
+          {industries.map((ind, i) => {
+            // If an item is open, and it's not THIS item, hide it.
+            const isHidden = openIndex !== -1 && openIndex !== i;
+            
+            return (
+              <div 
+                key={ind.idx} 
+                className={`industry-item ${openIndex === i ? 'open' : ''} ${isHidden ? 'focus-hidden' : ''}`}
+                data-aos="fade-right"
+                data-aos-delay={i * 200}
+                style={{
+                  display: isHidden ? 'none' : 'block'
+                }}
+              >
+                <div className="industry-hdr" onClick={() => setOpenIndex(openIndex === i ? -1 : i)}>
+                  <div className="ind-n">{ind.idx}</div>
+                  <div className="ind-name">{ind.name}</div>
+                  <div className="ind-arr">
+                    <Plus size={20} className="plus-icon" />
+                  </div>
+                </div>
+                <div className="industry-body">
+                  <div className="ind-roles">
+                    <h4>Key Roles We Fill</h4>
+                    <ul>
+                      {ind.roles.map((role, ri) => (
+                        <li key={ri}>{role}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="ind-quote">
+                    <blockquote>{ind.quote}</blockquote>
+                  </div>
                 </div>
               </div>
-              <div className="industry-body">
-                <div className="ind-roles">
-                  <h4>Key Roles We Fill</h4>
-                  <ul>
-                    {ind.roles.map((role, ri) => (
-                      <li key={ri}>{role}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="ind-quote">
-                  <blockquote>{ind.quote}</blockquote>
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
