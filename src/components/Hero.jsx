@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import './Hero.css';
 
 import AnimatedNumber from './AnimatedNumber';
+import Typewriter from './Typewriter';
 
 const Hero = () => {
   return (
@@ -14,8 +15,10 @@ const Hero = () => {
               SPECIALIST RECRUITMENT & STAFFING
             </div>
             <h1 className="hero-hl">
-              Hiring <em>Excellence</em> <br />
-              for Niche <em>Sectors.</em>
+              <Typewriter text="Hiring " speed={70} delay={200} /> 
+              <em><Typewriter text="Excellence" speed={70} delay={700} /></em> <br />
+              <Typewriter text="for Niche " speed={70} delay={1400} /> 
+              <em><Typewriter text="Sectors." speed={70} delay={2100} /></em>
             </h1>
             <p className="hero-sub">
               End-to-end talent solutions for Supply Chain, E-Commerce & Real Estate — powered by AI and deep niche expertise.
