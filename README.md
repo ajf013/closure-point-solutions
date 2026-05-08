@@ -87,4 +87,4 @@ src/
 
 ---
 
-© 2024 Closure Point Solutions. All rights reserved.
+© 2026 Closure Point Solutions. All rights reserved.
