@@ -1,0 +1,8 @@
+<step title="Incoming Request" date="2026-05-11T04:33:58.387" instance="e3b90f" url="/api/deployments/latest" method="GET" type="request" pid="841,1,15" Accept="*/*" Host="cps-chat-backend-app-fcruz.scm.azurewebsites.net" User-Agent="AZURECLI/2.85.0 (HOMEBREW)" Accept-Encoding="gzip, deflate" Authorization="Bea..." x-ms-client-request-id="664a419a-4cf2-11f1-a7dd-02ec5823a972" X-ARR-LOG-ID="664a419a-4cf2-11f1-a7dd-02ec5823a972" CLIENT-IP="49.206.115.10:21988" X-SITE-DEPLOYMENT-ID="cps-chat-backend-app-fcruz" WAS-DEFAULT-HOSTNAME="cps-chat-backend-app-fcruz.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/deployments/latest" X-Client-IP="49.206.115.10" X-Client-Port="21988" >
+  <step title="DeploymentService.GetResult" date="2026-05-11T04:33:58.797" >
+    <step title="DeploymentService.GetLatestDeployment" date="2026-05-11T04:33:58.837" >
+      <step title="DeploymentManager.GetResults" date="2026-05-11T04:33:58.889" /><!-- duration: 1618ms -->
+    </step><!-- duration: 1869ms -->
+  </step><!-- duration: 2031ms -->
+  <step title="Outgoing response" date="2026-05-11T04:34:03.548" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 112ms -->
+</step><!-- duration: 5350ms -->

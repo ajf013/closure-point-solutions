@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+leads.json
+chatbot-backend/.env
+chatbot-backend/leads.json
+chatbot-backend/node_modules
 
 # Editor directories and files
 .vscode/*
