@@ -33,9 +33,32 @@ export default function AgentPortal() {
   };
 
   useEffect(() => {
-    // Ask for agent name on first load
-    const name = prompt("Enter your Agent Name:") || `Agent_${Math.floor(Math.random()*1000)}`;
-    setAgentName(name);
+    // Try to get Agent Name from Azure Entra ID headers (provided by Easy Auth)
+    // In a browser, we can check these via a simple API call or if Azure injects them.
+    // For now, we check if we are in production and try to fetch user info.
+    
+    const fetchAgentIdentity = async () => {
+      try {
+        // Azure App Service provides user info at /.auth/me
+        const response = await fetch('/.auth/me');
+        const data = await response.json();
+        if (data && data[0] && data[0].user_id) {
+          const name = data[0].user_claims.find(c => c.typ.includes('givenname'))?.val || 
+                       data[0].user_id.split('@')[0];
+          setAgentName(name);
+        } else {
+          // Fallback to prompt if not on Azure or Auth not enabled
+          const name = prompt("Enter your Agent Name:") || `Agent_${Math.floor(Math.random()*1000)}`;
+          setAgentName(name);
+        }
+      } catch (e) {
+        // Local testing fallback
+        const name = prompt("Enter your Agent Name:") || `Agent_${Math.floor(Math.random()*1000)}`;
+        setAgentName(name);
+      }
+    };
+
+    fetchAgentIdentity();
 
     // Join as an agent to receive alerts
     socket.emit('join_chat', { sessionId: 'admin', role: 'agent' });
