@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![React](https://img.shields.io/badge/React-19-blue)
-![Vite](https://img.shields.io/badge/Vite-6-purple)
+![Vite](https://img.shields.io/badge/Vite-7-purple)
 ![Node](https://img.shields.io/badge/Node-22-green)
 
 **Closure Point Solutions (CPS)** is a premium talent solutions platform. This repository includes the main website, an AI-powered lead collection chatbot, and a dedicated Live Agent Portal.
@@ -28,10 +28,22 @@
 
 ## 🛠️ Tech Stack
 
-*   **Frontend**: React 19, Vite 6, Socket.io-client
-*   **Backend**: Node.js, Express, Socket.io
-*   **AI**: Azure OpenAI Service (GPT-4o)
-*   **Hosting**: Azure App Service (Backend)
+### 💻 Frontend
+*   ![React](https://img.shields.io/badge/React-19.2-blue?logo=react) **React 19** - UI Library
+*   ![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite) **Vite 7** - Next Generation Frontend Tooling
+*   ![Socket.io](https://img.shields.io/badge/Socket.io-4.8-black?logo=socket.io) **Socket.io-client** - Real-time communication
+*   ![Three.js](https://img.shields.io/badge/Three.js-0.184-black?logo=three.js) **Three.js** - 3D animations & visuals
+*   ![AOS](https://img.shields.io/badge/AOS-2.3-green) **AOS** - Animate On Scroll library
+
+### ⚙️ Backend
+*   ![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?logo=node.js) **Node.js 22** - Server-side runtime
+*   ![Express](https://img.shields.io/badge/Express-4.18-000000?logo=express) **Express 4** - Web framework
+*   ![Socket.io](https://img.shields.io/badge/Socket.io-4.7-black?logo=socket.io) **Socket.io** - WebSocket server
+*   ![Azure](https://img.shields.io/badge/Azure-App_Service-0089D6?logo=microsoft-azure) **Azure App Service** - Hosting & Deployment
+
+### 🧠 Artificial Intelligence
+*   ![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-GPT--4o-0078D4?logo=openai) **Azure OpenAI Service** - Powering the GPT-4o Chatbot
+
 
 ---
 
