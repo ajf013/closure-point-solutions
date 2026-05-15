@@ -2,8 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import './ChatWidget.css';
 
-// Connect to the LOCAL backend for 100% reliability
-const socket = io('http://localhost:8080', {
+// Connect to the backend
+const BACKEND_URL = import.meta.env.PROD 
+  ? 'https://cps-chat-backend-app-fcruz.azurewebsites.net' 
+  : 'http://localhost:8080';
+
+const socket = io(BACKEND_URL, {
   transports: ['polling', 'websocket']
 });
 
