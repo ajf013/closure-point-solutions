@@ -13,6 +13,8 @@ const socket = io(BACKEND_URL, {
 
 
 
+console.log('Chatbot Backend URL:', BACKEND_URL);
+
 socket.on('connect', () => console.log('Successfully connected to chatbot backend!'));
 socket.on('connect_error', (err) => console.error('Chatbot connection error:', err));
 
