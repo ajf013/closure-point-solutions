@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node chatbot-backend/server.js"
+    "start": "cd chatbot-backend && node server.cjs"
   },
   "dependencies": {
     "@azure/openai": "^1.0.0-beta.12",

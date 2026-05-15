@@ -4,9 +4,9 @@
   "engines": {
     "node": "20.x"
   },
-  "main": "server.js",
+  "main": "server.cjs",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
