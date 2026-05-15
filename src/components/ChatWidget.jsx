@@ -31,17 +31,22 @@ export default function ChatWidget() {
   };
 
   useEffect(() => {
-    socket.emit('join_chat', { sessionId: sessionIdRef.current, role: 'user' });
-
+    console.log('ChatWidget: Setting up socket listeners...');
+    
     socket.on('receive_message', (message) => {
-      setIsTyping(false); // Stop typing when message arrives
+      console.log('ChatWidget: Received message:', message);
+      setIsTyping(false); 
       setMessages((prev) => [...prev, message]);
     });
 
     socket.on('chat_resolved', (data) => {
+      console.log('ChatWidget: Chat resolved:', data);
       setMessages((prev) => [...prev, { sender: 'system', text: data.message, timestamp: new Date() }]);
       setIsTyping(false);
     });
+
+    console.log('ChatWidget: Joining chat with session:', sessionIdRef.current);
+    socket.emit('join_chat', { sessionId: sessionIdRef.current, role: 'user' });
 
     return () => {
       socket.off('receive_message');
