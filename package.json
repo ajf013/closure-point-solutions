@@ -7,18 +7,24 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node chatbot-backend/server.js"
   },
   "dependencies": {
+    "@azure/openai": "^1.0.0-beta.12",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "aos": "^2.3.4",
     "cobe": "^2.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "lucide-react": "^0.575.0",
     "react": "^19.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1",
+    "socket.io": "^4.7.2",
     "socket.io-client": "^4.8.3",
     "three": "^0.184.0"
   },

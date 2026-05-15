@@ -10,14 +10,14 @@ const path = require('path');
 
 const app = express();
 app.use(cors({
-  origin: ["https://closurepointsolutions.com", "http://localhost:5173", "http://localhost:3000"],
+  origin: true,
   credentials: true
 }));
 
 const server = http.createServer(app);
 const io = new Server(server, { 
   cors: { 
-    origin: ["https://closurepointsolutions.com", "http://localhost:5173", "http://localhost:3000"],
+    origin: true,
     methods: ["GET", "POST"],
     credentials: true
   } 
