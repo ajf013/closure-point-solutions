@@ -43,7 +43,7 @@ const Footer = () => {
             <h5>CONNECT</h5>
             <ul>
               <li><a href="mailto:info@closurepointsolutions.com">Email Us</a></li>
-              <li><a href="tel:+919113811578">Call Us</a></li>
+              <li><a href="tel:+919940828907">Call Us</a></li>
               {/* <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li> */}
             </ul>
           </div>

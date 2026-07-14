@@ -22,7 +22,7 @@ const CTA = () => {
               <Mail size={14} /> <a href="mailto:info@closurepointsolutions.com">info@closurepointsolutions.com</a>
             </div>
             <div className="cta-ct">
-              <Phone size={14} /> <a href="tel:+919113811578">+91 9113811578</a>
+              <Phone size={14} /> <a href="tel:+919940828907">+91 9940828907</a>
             </div>
           </div>
         </div>
