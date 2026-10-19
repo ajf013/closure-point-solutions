@@ -2,7 +2,7 @@
   "name": "chatbot-backend",
   "version": "1.0.0",
   "engines": {
-    "node": "20.x"
+    "node": ">=22.0.0"
   },
   "main": "server.cjs",
   "scripts": {
