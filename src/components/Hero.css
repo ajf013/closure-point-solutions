@@ -71,6 +71,7 @@
   letter-spacing: -.03em;
   color: var(--primary); /* Ensured high contrast */
   margin-bottom: 1.8rem;
+  min-height: 2.1em;
 }
 
 .hero-hl em {
@@ -94,14 +95,25 @@
 }
 
 .btn-g {
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1.5px solid var(--primary);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s var(--ease);
 }
 
 .btn-g:hover {
-  color: var(--primary);
+  background: rgba(27, 46, 11, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(27, 46, 11, 0.12);
 }
 
 /* Hero Stats Panel */
@@ -144,6 +156,12 @@
 .stat-box {
   padding: 2rem 2.2rem;
   background: var(--primary);
+  transition: all 0.3s var(--ease);
+}
+
+.stat-box:hover {
+  background: rgba(45, 62, 29, 0.95);
+  transform: translateY(-2px);
 }
 
 .stat-box .stat-n {

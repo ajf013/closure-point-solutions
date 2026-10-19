@@ -47,6 +47,12 @@
   opacity: .8;
 }
 
+.industry-hdr:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 .ind-n {
   font-family: var(--ff-m);
   font-size: .85rem; /* Increased */

@@ -51,7 +51,13 @@
 }
 
 .service-card:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover .svc-icon svg {
+  transform: scale(1.08);
 }
 
 .service-card:hover::after {
@@ -78,6 +84,7 @@
 .svc-icon svg {
   color: var(--primary);
   stroke-width: 1.5;
+  transition: transform 0.3s var(--ease);
 }
 
 .service-card:nth-child(2) .svc-icon svg { color: var(--secondary); }

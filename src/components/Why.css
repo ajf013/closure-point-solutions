@@ -52,6 +52,11 @@
 
 .why-card {
   position: relative;
+  transition: transform 0.3s var(--ease);
+}
+
+.why-card:hover {
+  transform: translateY(-3px);
 }
 
 .why-rule {
@@ -59,6 +64,11 @@
   height: 2px;
   background: var(--accent);
   margin-bottom: 1.2rem;
+  transition: width 0.3s var(--ease);
+}
+
+.why-card:hover .why-rule {
+  width: 2.6rem;
 }
 
 .why-card-ttl {

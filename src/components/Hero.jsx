@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import './Hero.css';
 
 import AnimatedNumber from './AnimatedNumber';
@@ -28,7 +28,7 @@ const Hero = () => {
                 Start Hiring <ArrowRight size={18} />
               </a>
               <a href="#services" className="btn-g">
-                Our Services
+                Our Services <ChevronDown size={16} />
               </a>
             </div>
           </div>

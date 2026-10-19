@@ -42,22 +42,38 @@ const Industries = () => {
         <div className="industries-list" data-aos="fade-up">
           {industries.map((ind, i) => {
             const isOpen = openIndex === i;
-            const isHidden = openIndex !== -1 && !isOpen;
             
             return (
               <div 
                 key={ind.idx} 
                 className={`industry-item ${isOpen ? 'open' : ''}`}
-                style={{ display: isHidden ? 'none' : 'block' }}
               >
-                <div className="industry-hdr" onClick={() => setOpenIndex(isOpen ? -1 : i)}>
+                <div 
+                  className="industry-hdr" 
+                  onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setOpenIndex(isOpen ? -1 : i);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isOpen}
+                  aria-controls={`industry-body-${ind.idx}`}
+                >
                   <div className="ind-n">{ind.idx}</div>
                   <div className="ind-name">{ind.name}</div>
-                  <div className="ind-arr">
+                  <div className="ind-arr" aria-hidden="true">
                     <Plus size={20} className="plus-icon" />
                   </div>
                 </div>
-                <div className="industry-body">
+                <div 
+                  id={`industry-body-${ind.idx}`}
+                  className="industry-body"
+                  role="region"
+                  aria-hidden={!isOpen}
+                >
                   <div className="ind-roles">
                     <h4>Key Roles We Fill</h4>
                     <ul>
